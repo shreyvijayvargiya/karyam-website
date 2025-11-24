@@ -253,7 +253,13 @@ const Home = () => {
 
 			{/* Statistics Section */}
 			<section className="py-12 px-4 sm:px-6 lg:px-8">
-				<div className="container mx-auto">
+				<motion.div
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.6 }}
+					className="container mx-auto"
+				>
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 						<motion.div
 							initial={{ opacity: 0, y: 20 }}
@@ -286,12 +292,18 @@ const Home = () => {
 							<div className="text-lg">Years of experience</div>
 						</motion.div>
 					</div>
-				</div>
+				</motion.div>
 			</section>
 
 			{/* Services Section */}
 			<section id="services" className="py-20 px-4 sm:px-6 lg:px-8">
-				<div className="container mx-auto">
+				<motion.div
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.6 }}
+					className="container mx-auto"
+				>
 					<div className="text-center mb-12">
 						<div className="mb-6 text-black flex gap-2 items-center dark:text-zinc-200 dark:bg-zinc-900 bg-zinc-100  w-fit py-2 px-4 mx-auto rounded-full">
 							<WorkflowIcon className="w-5 h-5" />
@@ -390,12 +402,18 @@ const Home = () => {
 							</p>
 						</motion.div>
 					</div>
-				</div>
+				</motion.div>
 			</section>
 
 			{/* Pricing Section */}
 			<section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8">
-				<div className="container mx-auto">
+				<motion.div
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.6 }}
+					className="container mx-auto"
+				>
 					<div className="text-center mb-12">
 						<div className="mb-6 text-black flex gap-2 items-center dark:text-zinc-200 dark:bg-zinc-900 bg-zinc-100  w-fit py-2 px-4 mx-auto rounded-full">
 							<CreditCard className="w-5 h-5" />
@@ -581,12 +599,18 @@ const Home = () => {
 							<span>Prices may vary based on project requirements</span>
 						</div>
 					</div>
-				</div>
+				</motion.div>
 			</section>
 
 			{/* Projects Section */}
 			<section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 ">
-				<div className="container mx-auto">
+				<motion.div
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.6 }}
+					className="container mx-auto"
+				>
 					<div className="text-center mb-12">
 						<div className="mb-6 text-black flex gap-2 items-center dark:text-zinc-200 dark:bg-zinc-900 bg-zinc-100  w-fit py-2 px-4 mx-auto rounded-full">
 							<BadgeAlert className="w-5 h-5" />
@@ -646,12 +670,18 @@ const Home = () => {
 							</motion.div>
 						))}
 					</div>
-				</div>
+				</motion.div>
 			</section>
 
 			{/* Let's Connect Section */}
 			<section className="py-20 px-4 sm:px-6 lg:px-8">
-				<div className="container mx-auto text-center">
+				<motion.div
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.6 }}
+					className="container mx-auto text-center"
+				>
 					<div className="mb-6 text-black flex gap-2 items-center dark:text-zinc-200 dark:bg-zinc-900 bg-zinc-100  w-fit py-2 px-4 mx-auto rounded-full">
 						<Contact2 className="w-5 h-5" />
 						Connect
@@ -662,7 +692,7 @@ const Home = () => {
 					<p className="text-lg text-muted-foreground max-w-2xl mx-auto">
 						Have a project in mind? Get in touch with us today.
 					</p>
-				</div>
+				</motion.div>
 			</section>
 
 			{/* Contact Section */}
@@ -670,7 +700,13 @@ const Home = () => {
 				id="contact"
 				className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/10 rounded-2xl shadow-xl"
 			>
-				<div className="container mx-auto">
+				<motion.div
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.6 }}
+					className="container mx-auto"
+				>
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
 						{/* Get in Touch */}
 						<div>
@@ -827,7 +863,7 @@ const Home = () => {
 							</form>
 						</div>
 					</div>
-				</div>
+				</motion.div>
 			</section>
 
 			{/* Modal */}
@@ -940,7 +976,13 @@ const Home = () => {
 
 			{/* Footer */}
 			<footer className="py-12 px-4 sm:px-6 lg:px-8">
-				<div className="container mx-auto">
+				<motion.div
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.6 }}
+					className="container mx-auto"
+				>
 					<div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
 						<div>
 							<div className="text-2xl font-bold mb-2">Karyam</div>
@@ -1048,7 +1090,7 @@ const Home = () => {
 						</div>
 						
 					</div>
-				</div>
+				</motion.div>
 			</footer>
 		</div>
 	);
