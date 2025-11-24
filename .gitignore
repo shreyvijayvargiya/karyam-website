@@ -3,3 +3,5 @@ yarn.lock
 yarn-error.lock
 .next
 .vercel
+.env.local
+.env
