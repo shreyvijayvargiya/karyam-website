@@ -7,9 +7,6 @@
 	"author": "iHateReading",
 	"license": "MIT",
 	"private": true,
-	"engines": {
-		"node": ">=20.x"
-	},
 	"scripts": {
 		"dev": "next",
 		"clean": "yarn cache clean",
