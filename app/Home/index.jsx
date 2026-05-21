@@ -1,8 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-	Sun,
-	Moon,
 	Globe,
 	MapPin,
 	CheckCircle2,
@@ -25,9 +23,12 @@ import {
 } from "lucide-react";
 import { FaTwitter } from "react-icons/fa";
 import { toast } from "react-toastify";
+import SiteHeader from "../components/SiteHeader";
+import SiteFooter from "../components/SiteFooter";
+import { useTheme } from "../components/useTheme";
 
 const Home = () => {
-	const [theme, setTheme] = useState("dark");
+	const { theme, toggleTheme } = useTheme();
 	const [copied, setCopied] = useState({ phone: false, email: false });
 	const [formData, setFormData] = useState({
 		name: "",
@@ -75,19 +76,6 @@ const Home = () => {
 	const closeModal = () => {
 		setIsModalOpen(false);
 		setSelectedService("");
-	};
-
-	useEffect(() => {
-		const root = document.documentElement;
-		if (theme === "dark") {
-			root.classList.add("dark");
-		} else {
-			root.classList.remove("dark");
-		}
-	}, [theme]);
-
-	const toggleTheme = () => {
-		setTheme(theme === "dark" ? "light" : "dark");
 	};
 
 	const copyToClipboard = (text, type) => {
@@ -150,57 +138,7 @@ const Home = () => {
 
 	return (
 		<div className="min-h-screen bg-background text-foreground max-w-5xl mx-auto">
-			{/* Header */}
-			<header className="fixed top-2 left-0 right-0 z-50 rounded-xl max-w-5xl  bg-muted/30 mx-auto backdrop-blur-sm border border-border">
-				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
-					<div className="flex items-center justify-between h-12">
-						<div className="text-2xl font-bold">Karyam</div>
-						<nav className="hidden md:flex items-center gap-6">
-							<a
-								href="#services"
-								className="hover:text-primary transition-colors"
-							>
-								Services
-							</a>
-							<a
-								href="#projects"
-								className="hover:text-primary transition-colors"
-							>
-								Projects
-							</a>
-							<a
-								href="#pricing"
-								className="hover:text-primary transition-colors"
-							>
-								Pricing
-							</a>
-							<a
-								href="#contact"
-								className="hover:text-primary transition-colors"
-							>
-								Contact
-							</a>
-						</nav>
-						<div className="flex items-center gap-4">
-							<button
-								onClick={toggleTheme}
-								className="p-2 rounded-xl hover:bg-accent transition-colors"
-								aria-label="Toggle theme"
-							>
-								{theme === "dark" ? (
-									<Sun className="w-5 h-5" />
-								) : (
-									<Moon className="w-5 h-5" />
-								)}
-							</button>
-							{/* <button className="flex items-center gap-2 px-4 py-2 rounded-xl border border-border hover:bg-accent transition-colors">
-								<Globe className="w-4 h-4" />
-								<span className="text-sm">Hindi</span>
-							</button> */}
-						</div>
-					</div>
-				</div>
-			</header>
+			<SiteHeader theme={theme} toggleTheme={toggleTheme} />
 
 			{/* Hero Section */}
 			<section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
@@ -974,124 +912,7 @@ const Home = () => {
 				)}
 			</AnimatePresence>
 
-			{/* Footer */}
-			<footer className="py-12 px-4 sm:px-6 lg:px-8">
-				<motion.div
-					initial={{ opacity: 0, y: 20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true }}
-					transition={{ duration: 0.6 }}
-					className="container mx-auto"
-				>
-					<div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-						<div>
-							<div className="text-2xl font-bold mb-2">Karyam</div>
-							<p className="text-sm text-muted-foreground">
-								Crafting digital excellence worldwide
-							</p>
-						</div>
-						<div>
-							<h3 className="font-semibold mb-4">Services</h3>
-							<ul className="space-y-2 text-sm text-muted-foreground">
-								<li>
-									<a
-										href="#services"
-										className="hover:text-foreground transition-colors"
-									>
-										Web Development
-									</a>
-								</li>
-								<li>
-									<a
-										href="#services"
-										className="hover:text-foreground transition-colors"
-									>
-										Mobile Apps
-									</a>
-								</li>
-								<li>
-									<a
-										href="#services"
-										className="hover:text-foreground transition-colors"
-									>
-										API Development
-									</a>
-								</li>
-							</ul>
-						</div>
-						<div>
-							<h3 className="font-semibold mb-4">Company</h3>
-							<ul className="space-y-2 text-sm text-muted-foreground">
-								<li>
-									<a
-										href="#projects"
-										className="hover:text-foreground transition-colors"
-									>
-										Projects
-									</a>
-								</li>
-								<li>
-									<a
-										href="#pricing"
-										className="hover:text-foreground transition-colors"
-									>
-										Pricing
-									</a>
-								</li>
-								<li>
-									<a
-										href="#contact"
-										className="hover:text-foreground transition-colors"
-									>
-										Contact
-									</a>
-								</li>
-							</ul>
-						</div>
-						<div>
-							<h3 className="font-semibold mb-4">Contact</h3>
-							<ul className="space-y-2 text-sm text-muted-foreground">
-								<li>
-									<a
-										href="https://twitter.com/xtreyvijay"
-										target="_blank"
-										rel="noopener noreferrer"
-										className="hover:text-foreground transition-colors flex items-center gap-2"
-									>
-										<FaTwitter className="w-4 h-4" />
-										Twitter
-									</a>
-								</li>
-								<li>
-									<a
-										href="mailto:shreyvijayvargiya26@gmail.com"
-										className="hover:text-foreground transition-colors flex items-center gap-2"
-									>
-										<Mail className="w-4 h-4" />
-										Email
-									</a>
-								</li>
-								<li>
-									<a
-										href="tel:7030226230"
-										className="hover:text-foreground transition-colors flex items-center gap-2"
-									>
-										<Phone className="w-4 h-4" />
-										Phone
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-
-					<div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8">
-						<div className="text-sm text-muted-foreground">
-							© 2025 Karyam. All rights reserved.
-						</div>
-						
-					</div>
-				</motion.div>
-			</footer>
+			<SiteFooter />
 		</div>
 	);
 };
