@@ -19,7 +19,7 @@ const TermsAndConditions = () => (
 			referred to as &apos;Platform&apos;).
 		</LegalParagraph>
 		<LegalParagraph>
-			The Platform is owned by 7030226230, a company incorporated under the
+			The Platform is owned by Karyam, a company incorporated under the
 			Companies Act, 1956 with its registered office at A-235 Ridhi Sidhi Nagar
 			(hereinafter referred to as &apos;Platform Owner&apos;, &apos;we&apos;,
 			&apos;us&apos;, &apos;our&apos;)..

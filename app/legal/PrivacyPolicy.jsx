@@ -5,8 +5,8 @@ const PrivacyPolicy = () => (
 	<LegalPageLayout title="Privacy Policy">
 		<LegalHeading>Introduction</LegalHeading>
 		<LegalParagraph>
-			This Privacy Policy describes how 7030226230 and its affiliates (collectively
-			&quot;7030226230, we, our, us&quot;) collect, use, share, protect or otherwise
+			This Privacy Policy describes how Karyam and its affiliates (collectively
+			&quot;Karyam, we, our, us&quot;) collect, use, share, protect or otherwise
 			process your information/ personal data through our website
 			https://karyam.xyz (hereinafter referred to as Platform). Please note that
 			you may be able to browse certain sections of the Platform without
@@ -46,7 +46,7 @@ const PrivacyPolicy = () => (
 			business partner&apos;s privacy practices or the content of their privacy
 			policies, and we request you to read their privacy policies prior to
 			disclosing any information. If you receive an email, a call from a
-			person/association claiming to be 7030226230 seeking any personal data like
+			person/association claiming to be Karyam seeking any personal data like
 			debit/credit card PIN, net-banking or mobile banking password, we request you
 			to never provide such information. If you have already revealed such
 			information, report it immediately to an appropriate law enforcement agency.
@@ -177,10 +177,10 @@ const PrivacyPolicy = () => (
 		<LegalParagraph>
 			Phone:{" "}
 			<a
-				href="tel:7030226230"
+				href="tel:Karyam"
 				className="text-foreground underline hover:text-primary transition-colors"
 			>
-				7030226230
+				Karyam
 			</a>
 			<br />
 			Email:{" "}
