@@ -17,7 +17,7 @@ const RefundPolicy = () => (
 			product at the doorstep.
 		</LegalParagraph>
 		<LegalParagraph>
-			7030226230 does not accept cancellation requests for perishable items like
+			Karyam does not accept cancellation requests for perishable items like
 			flowers, eatables, etc. However, the refund / replacement can be made if
 			the user establishes that the quality of the product delivered is not good.
 		</LegalParagraph>
@@ -36,7 +36,7 @@ const RefundPolicy = () => (
 			the manufacturers, please refer the issue to them.
 		</LegalParagraph>
 		<LegalParagraph>
-			In case of any refunds approved by 7030226230, it will take 15 days for the
+			In case of any refunds approved by Karyam, it will take 15 days for the
 			refund to be processed to you.
 		</LegalParagraph>
 	</LegalPageLayout>

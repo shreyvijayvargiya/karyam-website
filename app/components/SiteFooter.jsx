@@ -108,22 +108,6 @@ const SiteFooter = () => {
 							</li>
 							<li>
 								<Link
-									href="/return-policy"
-									className="hover:text-foreground transition-colors"
-								>
-									Return Policy
-								</Link>
-							</li>
-							<li>
-								<Link
-									href="/shipping-policy"
-									className="hover:text-foreground transition-colors"
-								>
-									Shipping Policy
-								</Link>
-							</li>
-							<li>
-								<Link
 									href="/policy"
 									className="hover:text-foreground transition-colors"
 								>
