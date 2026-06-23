@@ -11,7 +11,6 @@ import {
 	Twitter,
 	Copy,
 	Send,
-	Plus,
 	ArrowRight,
 	MessageCircle,
 	ChevronDown,
@@ -20,6 +19,7 @@ import {
 	WorkflowIcon,
 	BadgeAlert,
 	Contact2,
+	ExternalLink,
 } from "lucide-react";
 import { FaTwitter } from "react-icons/fa";
 import { toast } from "react-toastify";
@@ -562,50 +562,64 @@ const Home = () => {
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 						{[
 							{
+								title: "BuildSaaS",
+								type: "Next.js SaaS starter boilerplate template",
+								url: "buildsaas.dev",
+								href: "https://buildsaas.dev",
+							},
+							{
+								title: "Inkgest",
+								type: "AI agentic writer",
+								url: "inkgest.com",
+								href: "https://inkgest.com",
+							},
+							{
+								title: "Aantraa",
+								type: "AI audio video translation",
+								url: "aantraa.site",
+								href: "https://aantraa.site",
+							},
+							{
 								title: "ChainGPT",
 								type: "Mobile App Development",
 								url: "chaingpt.org",
+								href: "https://chaingpt.org",
 							},
 							{
 								title: "iHateReading",
 								type: "Website Development",
 								url: "ihatereading.in",
+								href: "https://ihatereading.in",
 							},
 							{
 								title: "GetTemplate",
 								type: "Website Development",
 								url: "gettemplate.website",
-							},
-							{
-								title: "Custom",
-								type: "Build your own",
-								url: "Add yours",
-								custom: true,
+								href: "https://gettemplate.website",
 							},
 						].map((project, index) => (
-							<motion.div
-								key={index}
+							<motion.a
+								key={project.url}
+								href={project.href}
+								target="_blank"
+								rel="noopener noreferrer"
 								initial={{ opacity: 0, y: 20 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
 								transition={{ duration: 0.5, delay: index * 0.1 }}
-								className="bg-card border border-border p-6 rounded-xl hover:border-primary transition-colors"
+								className="group bg-card border border-border p-6 rounded-xl hover:border-primary transition-colors block"
 							>
 								<h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-								<p className="text-sm text-muted-foreground mb-2">
+								<p className="text-sm text-muted-foreground mb-4">
 									{project.type}
 								</p>
-								<div className="flex items-center justify-between">
-									<span className="text-sm text-muted-foreground">
+								<div className="flex items-center justify-between gap-2">
+									<span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
 										{project.url}
 									</span>
-									{project.custom && (
-										<button className="p-2 hover:bg-accent rounded-xl transition-colors">
-											<Plus className="w-4 h-4" />
-										</button>
-									)}
+									<ExternalLink className="w-4 h-4 shrink-0 text-muted-foreground transition-all duration-300 ease-out group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:scale-110" />
 								</div>
-							</motion.div>
+							</motion.a>
 						))}
 					</div>
 				</motion.div>

@@ -3,13 +3,16 @@ import "tailwindcss/tailwind.css";
 import "../globals.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import { BackgroundProvider } from "../app/components/useBackground";
+import SiteBackground from "../app/components/SiteBackground";
 
 function MyApp({ Component, pageProps }) {
 	return (
-		<div>
+		<BackgroundProvider>
+			<SiteBackground />
 			<ToastContainer />
 			<Component {...pageProps} />
-		</div>
+		</BackgroundProvider>
 	);
 }
 

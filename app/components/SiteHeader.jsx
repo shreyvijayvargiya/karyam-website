@@ -1,8 +1,10 @@
 import React from "react";
 import Link from "next/link";
-import { Sun, Moon } from "lucide-react";
+import { Sun, Moon, Sparkles, Waves } from "lucide-react";
+import { useBackground } from "./useBackground";
 
 const SiteHeader = ({ theme, toggleTheme }) => {
+	const { background, toggleBackground } = useBackground();
 	const navLinks = [
 		{ href: "/#services", label: "Services" },
 		{ href: "/#projects", label: "Projects" },
@@ -28,7 +30,19 @@ const SiteHeader = ({ theme, toggleTheme }) => {
 							</a>
 						))}
 					</nav>
-					<div className="flex items-center gap-4">
+					<div className="flex items-center gap-2">
+						<button
+							onClick={toggleBackground}
+							className="p-2 rounded-xl hover:bg-accent transition-colors"
+							aria-label={`Switch to ${background === "topographic" ? "starfield" : "topographic"} background`}
+							title={`Switch to ${background === "topographic" ? "starfield" : "topographic"} background`}
+						>
+							{background === "topographic" ? (
+								<Sparkles className="w-5 h-5" />
+							) : (
+								<Waves className="w-5 h-5" />
+							)}
+						</button>
 						<button
 							onClick={toggleTheme}
 							className="p-2 rounded-xl hover:bg-accent transition-colors"

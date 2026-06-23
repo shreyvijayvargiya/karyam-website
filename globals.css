@@ -56,6 +56,64 @@
 	body {
 		@apply font-sans antialiased bg-background text-foreground;
 	}
+
+	html[data-background="topographic"].dark .min-h-screen.bg-background,
+	html[data-background="topographic"].dark body {
+		background-color: hsl(var(--background));
+	}
+
+	html[data-background="topographic"]:not(.dark) .min-h-screen.bg-background,
+	html[data-background="topographic"]:not(.dark) body {
+		background-color: hsl(var(--background));
+	}
+
+	html[data-background="starfield"].dark .min-h-screen.bg-background,
+	html[data-background="starfield"].dark body {
+		background-color: hsl(240 10% 2%);
+	}
+
+	html[data-background="starfield"]:not(.dark) .min-h-screen.bg-background,
+	html[data-background="starfield"]:not(.dark) body {
+		background-color: hsl(0 0% 98%);
+	}
+
+	html[data-background] .min-h-screen.bg-background {
+		background-color: transparent;
+	}
+}
+
+.topographic-bg-layer {
+	position: fixed;
+	inset: 0;
+	z-index: -10;
+	pointer-events: none;
+	background-size: 120% 120%;
+	background-position: center;
+	background-repeat: no-repeat;
+	animation: topo-drift 48s ease-in-out infinite alternate;
+}
+
+html.dark .topographic-bg-layer {
+	background-image: url("/topographic-pattern-dark.svg");
+}
+
+html:not(.dark) .topographic-bg-layer {
+	background-image: url("/topographic-pattern-light.svg");
+}
+
+@keyframes topo-drift {
+	0% {
+		transform: translate3d(0, 0, 0) scale(1);
+		background-position: 45% 40%;
+	}
+	50% {
+		transform: translate3d(-1.5%, 1%, 0) scale(1.03);
+		background-position: 55% 60%;
+	}
+	100% {
+		transform: translate3d(1.5%, -1%, 0) scale(1.05);
+		background-position: 40% 55%;
+	}
 }
 
 .hidescrollbar::-webkit-scrollbar {
